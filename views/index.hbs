@@ -1,0 +1,24 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            {{{display messages}}}
+            <div></div>
+            <form action="/login" method="POST">
+                <div class="form-group">
+                    <label for="">Username</label>
+                    <input name="username" title="username" type="text" class="form-control">
+                </div>
+
+                <div class="form-group">
+                    <label for="">Password</label>
+                    <input name="password" title="password" type="password" class="form-control">
+                </div>
+
+                <button type="submit" class="btn btn-success">Login</button>
+
+                <a href="/register">Register</a>
+            </form>
+        </div>
+    </div>
+</div>
