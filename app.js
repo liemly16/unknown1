@@ -10,6 +10,7 @@ var passport = require('passport');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var videoRouter = require('./routes/video');
 
 var app = express();
 mongoose.connect(`mongodb://thanhliem:thanhliem123a@ds153577.mlab.com:53577/unknown1`, { useNewUrlParser: true })
@@ -29,7 +30,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(expressSession({
   secret: '12321312321sdaasdad',
-  cookie: {  },
+  cookie: {},
   resave: false,
   saveUninitialized: false
 }));
@@ -46,6 +47,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/video', videoRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
